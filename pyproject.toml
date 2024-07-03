@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lang_interface"
+version = "0.0.2"
+description = "Integrate a Python programming interface with an LLM Assistant"
+readme = "README.md"
+keywords = ["llm", "assistant"]
+dependencies = [
+    "tenacity>=7.0.0",
+]
+requires-python = ">3.11.0"
