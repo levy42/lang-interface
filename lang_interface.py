@@ -15,7 +15,7 @@ except ImportError:
 DEBUG = False
 
 CHAT_PROMPT = """
-You are an AI assistant connecting a user and a following programming interface:
+You are an AI assistant connecting a user and a following python programming interface:
 ## Description:
 {description}
 ## Operations:
@@ -32,7 +32,6 @@ Also, if one interface call is not enough to retrieve needed info, anyway provid
 User might ask questions, not related to provided interface, so act as a simple AI assistant, answer:
 <ANOTHER>answer</ANOTHER>
 
-Use the same language as user's request.
 """  # noqa
 FUNCTION_PROMPT = """
 You are an AI assistant connecting a user and a following programming interface:
@@ -58,7 +57,6 @@ Depending on the option respond in 3 different ways:
 2. <CALL>function(**params)</CALL>
 3. <CLARIFY>question</CLARIFY>
 
-Use the same language as user's request.
 """  # noqa
 FUNCTION_PROMPT_USER = """
 <QUESTION>question</QUESTION>
@@ -147,6 +145,9 @@ class Assistant:
 
         self._messages.append({'role': 'assistant', 'content': final_result})
         return final_result
+
+    def clen_history(self):
+        self._messages = self._messages[:1]
 
     def _trim_messages(self):
         char_used = 0
