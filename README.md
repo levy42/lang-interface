@@ -3,6 +3,8 @@
 Super lightweight helper to turn your python interface
 into an AI assistant.
 
+    pip install lang-interface
+    
 ## 🚀 Quick start
 ```python
 from dotenv import load_dotenv
